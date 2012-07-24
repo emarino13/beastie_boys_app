@@ -3,15 +3,21 @@
   <input type="text" name="album_year"/>
 
   <input type="submit" name="submit" value="Search"/>
- </form>
+</form>
 
-<h1>You searched for beastie boy albums in <%= @album_year%></h1>
+<p>You searched for Beastie Boys albums in <%= @album_year%>.</p>
 
 <% @albums.each do |album|%>
- <p> <%= album.name %></p>
+ <p>In <%= @album_year%>, the album released was "<%= album.name %>".</p>
 <% end %>
 
 <% if @albums.empty? %>
-  <p>There are no albums for that year</p>
+  <p>There are no albums for that year.</p>
 <% end %>
 
+<form action="/searches" method="get">
+  <label>Search Beastie Boys albums by album name:</label>
+  <input type="text" name="album_name"/>
+
+  <input type="submit" name="submit" value="Search"/>
+ </form>
