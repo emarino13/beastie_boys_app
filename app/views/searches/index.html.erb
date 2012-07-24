@@ -6,3 +6,12 @@
  </form>
 
 <h1>You searched for beastie boy albums in <%= @album_year%></h1>
+
+<% @albums.each do |album|%>
+ <p> <%= album.name %></p>
+<% end %>
+
+<% if @albums.empty? %>
+  <p>There are no albums for that year</p>
+<% end %>
+
