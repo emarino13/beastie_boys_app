@@ -1,6 +1,7 @@
 BeastieBoysApp::Application.routes.draw do
 
   root :to => 'searches#index'
+  get '/searches' => 'searches#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

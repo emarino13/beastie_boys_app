@@ -1,1 +1,8 @@
-hello
+<form action="/searches" method="get">
+  <label>Search Beastie Boys Albums by Year:</label>
+  <input type="text" name="album_year"/>
+
+  <input type="submit" name="submit" value="Search"/>
+ </form>
+
+<h1>You searched for beastie boy albums in <%= @album_year%></h1>
