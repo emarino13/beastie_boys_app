@@ -1,23 +1,35 @@
+<h1>Beastie Boy's Discography -- Hell to the yeah!</h1>
+<img border = "0" img src ="/beastie-boys-2.jpg/">
+
 <form action="/searches" method="get">
-  <label>Search Beastie Boys Albums by Year:</label>
+  <label>Search Beastie Boys albums by year:</label>
   <input type="text" name="album_year"/>
 
   <input type="submit" name="submit" value="Search"/>
 </form>
 
-<p>You searched for Beastie Boys albums in <%= @album_year%>.</p>
+<!-- <p>You searched for Beastie Boys albums in <%= @album_year%>.</p> -->
 
 <% @albums.each do |album|%>
- <p>In <%= @album_year%>, the album released was "<%= album.name %>".</p>
+  <p>In <%= @album_year%>, the album released was "<%= album.name %>."</p>
 <% end %>
 
-<% if @albums.empty? %>
-  <p>There are no albums for that year.</p>
+<% if @albums.empty? then %>
+  <p> There are no albums for that year.</p>
 <% end %>
+
+<p>Or...</p>
 
 <form action="/searches" method="get">
-  <label>Search Beastie Boys albums by album name:</label>
-  <input type="text" name="album_name"/>
-
+  <label>Search album name to find out the year released:</label>
+  <input type="text" name="album_year"/>
   <input type="submit" name="submit" value="Search"/>
- </form>
+</form>
+
+<% @albums.each do |album|%>
+  <p>The album "<%= album.name %>"", was released in <%= @album_year %>.</p>
+<% end %>
+
+
+
+
