@@ -1,4 +1,5 @@
 <h1>Beastie Boy's Discography -- Hell to the yeah!</h1>
+
 <img border = "0" img src ="/beastie-boys-2.jpg/">
 
 <form action="/searches" method="get">
@@ -10,11 +11,13 @@
 
 <!-- <p>You searched for Beastie Boys albums in <%= @album_year%>.</p> -->
 
-<% @albums.each do |album|%>
-  <p>In <%= @album_year%>, the album released was "<%= album.name %>."</p>
+<% if params[:album_year].present? then %>
+  <% @albums.each do |album|%>
+    <p>In <%= @album_year%>, the album released was "<%= album.name %>."</p>
+  <% end %>
 <% end %>
 
-<% if @albums.empty? then %>
+<% if @albums.empty? and params[:album_year].present? then %>
   <p> There are no albums for that year.</p>
 <% end %>
 
@@ -22,14 +25,11 @@
 
 <form action="/searches" method="get">
   <label>Search album name to find out the year released:</label>
-  <input type="text" name="album_year"/>
+  <input type="text" name="album_name"/>
   <input type="submit" name="submit" value="Search"/>
 </form>
 
-<% @albums.each do |album|%>
-  <p>The album "<%= album.name %>"", was released in <%= @album_year %>.</p>
+<% if params[:album_name].present? then %>
+  <p> The album "<%= @album_name %>", was released in <%= @album_year %>.</p>
 <% end %>
-
-
-
-
+<%= params.inspect %>
