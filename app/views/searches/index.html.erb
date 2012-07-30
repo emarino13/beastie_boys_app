@@ -1,4 +1,4 @@
-<h1>Beastie Boy's Discography -- Hell to the yeah!</h1>
+<h1>Beastie Boys Discography -- Hell to the yeah!</h1>
 
 <img border = "0" img src ="/beastie-boys-2.jpg/">
 
@@ -13,7 +13,7 @@
 
 <% if params[:album_year].present? then %>
   <% @albums.each do |album|%>
-    <p>In <%= @album_year%>, the album released was "<%= album.name %>."</p>
+    <p><b>In <%= @album_year%>, the album released was "<%= album.name %>."</b></p>
   <% end %>
 <% end %>
 
@@ -31,7 +31,7 @@
 
 <% if params[:album_name].present? then %>
   <% @albums.each do |album| %>
-  <p> The album "<%= @album_name %>", was released in <%= album.year  %>.</p>
+  <p><b> The album "<%= @album_name %>", was released in <%= album.year %>.</b></p>
   <% end %>
   <% end %>
 
