@@ -2,6 +2,8 @@ BeastieBoysApp::Application.routes.draw do
 
   root :to => 'searches#index'
   get '/searches' => 'searches#index'
+  match 'searches/find_by_year' => 'searches#find_by_year', :as => :find_by_year
+  match 'searches/find_by_name' => 'searches#find_by_name', :as => :find_by_name
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
